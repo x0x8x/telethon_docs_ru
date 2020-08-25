@@ -1,80 +1,79 @@
 .. _installation:
 
 ============
-Installation
+Установка
 ============
 
-Telethon is a Python library, which means you need to download and install
-Python from https://www.python.org/downloads/ if you haven't already. Once
-you have Python installed, run:
+Telethon - это библиотека для Python, что означает, что вы должны скачать и установить
+Python из https://www.python.org/downloads/ Если вы этого еще не сделали. После установки
+запустите:
 
 .. code-block:: sh
 
     pip3 install -U telethon --user
 
-To install or upgrade the library to the latest version.
+Чтобы установить или обновить библиотеку последней версии.
 
 
-Installing Development Versions
-===============================
+Установка dev версий
+====================
 
-If you want the *latest* unreleased changes,
-you can run the following command instead:
+Если вам нужна *последняя* не релизнутая версия,
+вы можете использовать эту команду:
 
 .. code-block:: sh
 
     pip3 install -U https://github.com/LonamiWebs/Telethon/archive/master.zip --user
 
 .. note::
-
-    The development version may have bugs and is not recommended for production
-    use. However, when you are `reporting a library bug`__, you should try if the
-    bug still occurs in this version.
+    В dev версиях могут быть баги, и они не рекомендовынны для продакшна.
+    Тем не менее, когда вы `делаете бег-репорт`__, вы должны проверить,
+    остался ли баг в последней версии
 
 .. __: https://github.com/LonamiWebs/Telethon/issues/
 
 
-Verification
-============
+Подтверждение
+=============
 
-To verify that the library is installed correctly, run the following command:
+Чтобы подтвердить, что библиотека установилась корректно, запустите слудующую команду:
 
 .. code-block:: sh
 
     python3 -c "import telethon; print(telethon.__version__)"
 
-The version number of the library should show in the output.
+Версия библиотеки будет показана.
 
 
-Optional Dependencies
-=====================
+Необязательные зависимости
+==========================
 
-If cryptg_ is installed, **the library will work a lot faster**, since
-encryption and decryption will be made in C instead of Python. If your
-code deals with a lot of updates or you are downloading/uploading a lot
-of files, you will notice a considerable speed-up (from a hundred kilobytes
-per second to several megabytes per second, if your connection allows it).
-If it's not installed, pyaes_ will be used (which is pure Python, so it's
-much slower).
+Если cryptg_ установлен, **библиотека будет работать куда быстрее**, т.к.
+шифровка и разшифровка будет делаться в C вместо Python. Если вашему коду
+приходится работать с большим количеством апдейтов, или вы загружаете/выгружаете
+много файлов, вы ызаметите сильное увеличение скорости (от сотен килобоайт
+в секунду до нескольких мегебайт в секунду, если ваше соеденение позволяет это)
+Если cryptg_ не установлен, pyaes_ будет использоваться (который написон на Python,
+что значит, что он куда медленнее)
 
-If pillow_ is installed, large images will be automatically resized when
-sending photos to prevent Telegram from failing with "invalid image".
-Official clients also do this.
+Если pillow_ установлен, большие картинки будут автоматически изменены
+в размере, чтобы Telegram не отвечал ошибкой "invalid image".
+Оффициальные клиенты делают тоже самое.
 
-If aiohttp_ is installed, the library will be able to download
-:tl:`WebDocument` media files (otherwise you will get an error).
+Если aiohttp_ установлен, библиотека будет автоматически загружать
+:tl:`WebDocument` медиа файлы (иначе вы получите ошибку).
 
-If hachoir_ is installed, it will be used to extract metadata from files
-when sending documents. Telegram uses this information to show the song's
-performer, artist, title, duration, and for videos too (including size).
-Otherwise, they will default to empty values, and you can set the attributes
-manually.
+Если hachoir_ установлен, н будет автоматически доставать метадату из файлов
+при отправке документов. Телеграм использует эту информацию для показа
+исполлнителя песен, артиста, названия, длительности, а так же для видео
+(включая размер).
+Иначе, (по стандарту) они будут пустыми, и вы можете прописать аттрибуты
+вручную.
 
 .. note::
-
-    Some of the modules may require additional dependencies before being
-    installed through ``pip``. If you have an ``apt``-based system, consider
-    installing the most commonly missing dependencies:
+    Некоторым модулям нужны дополнителоьные зависимости до установки
+    через ``pip``. Если у вас ``apt`` система, установите самые частые
+    зависимости:
 
     .. code-block:: sh
 
@@ -83,7 +82,7 @@ manually.
         pip install -U --user setuptools
         pip install -U --user telethon cryptg pillow
 
-    Thanks to `@bb010g`_ for writing down this nice list.
+    Спасибо `@bb010g`_ за этот список.
 
 .. _cryptg: https://github.com/cher-nov/cryptg
 .. _pyaes: https://github.com/ricmoo/pyaes
