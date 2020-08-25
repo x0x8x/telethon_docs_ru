@@ -1,4 +1,14 @@
 # telethon_docs_ru
 Telethon documentation, but in Russian [UNOFFCICIAL]
 
-apepenkov is currently translating readthedocs\basic
+еслии Вы хотите поучавствовть - Вперед!
+
+Ведется перевод:
+
+apepenkov -  перевожу readthedocs\basic
+
+
+
+
+
+
